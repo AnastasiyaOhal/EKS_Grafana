@@ -27,9 +27,9 @@ jobs:
           curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.29.0/2024-01-04/bin/darwin/amd64/kubectl
     #      sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
-   #   - name: Create ns  
-   #     run: | 
-   #       kubectl create ns grafana
+      - name: Create ns  
+        run: | 
+          kubectl create ns grafana
 
       - name: Install Helm
         run: |
@@ -53,6 +53,5 @@ jobs:
       - name: Deploy Grafana from Helm Chart
         run: |
           helm repo add grafana https://grafana.github.io/helm-charts
-          helm upgrade my-grafana grafana/grafana -f values.yaml -f values-dev.yaml -n grafana
-       #   helm install my-grafana grafana/grafana --version 7.3.3 -n grafana
-          
+          helm install my-grafana grafana/grafana --version 7.3.3 -n grafana
+     #     helm upgrade grafana grafana/grafana -f values.yaml -f values-dev.yaml -n grafana
