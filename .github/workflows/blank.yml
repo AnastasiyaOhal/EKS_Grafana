@@ -52,8 +52,9 @@ jobs:
 
       - name: Deploy Grafana from Helm Chart
         run: |
-          helm upgrade grafana grafana/grafana -f values.yaml -f values-dev.yaml -n grafana
-#          helm repo add grafana https://grafana.github.io/helm-charts
+          helm repo add my-grafana https://grafana.github.io/helm-charts
+          helm upgrade my-grafana grafana/grafana -f values.yaml -f values-dev.yaml -n grafana
+          
           
 
 #         helm install my-grafana grafana/grafana --version 7.3.3 -n grafana
