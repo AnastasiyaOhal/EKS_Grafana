@@ -25,7 +25,7 @@ jobs:
       - name: Install kubectl
         run: | 
           curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.29.0/2024-01-04/bin/darwin/amd64/kubectl
-          sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+    #      sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
     #  - name: Create ns  
     #    run: | 
@@ -47,7 +47,7 @@ jobs:
     
       - name: Access cloned repo
         run: |
-           cd Grafana
+           cd EKS_Grafana
            ls -la
 
       - name: Deploy Grafana from Helm Chart
